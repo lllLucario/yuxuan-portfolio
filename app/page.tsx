@@ -32,7 +32,7 @@ export default function Home() {
       <Section id="hero">
         <Container>
           <div className="reveal flex min-h-[80vh] items-center">
-            <div className="space-y-6">
+            <div className="space-y-5 sm:space-y-6">
               <h1 className="bg-gradient-to-r from-neutral-100 to-neutral-400 bg-clip-text text-4xl font-semibold tracking-tight text-transparent sm:text-5xl">
                 Full-Stack Developer
               </h1>
@@ -53,11 +53,11 @@ export default function Home() {
 
       <Section id="skills">
         <Container>
-          <div className="reveal space-y-8">
-            <h2 className="text-2xl font-semibold tracking-tight text-neutral-100">Skills</h2>
-            <div className="space-y-5">
+          <div className="reveal">
+            <h2 className="mb-8 text-2xl font-semibold tracking-tight text-neutral-100">Skills</h2>
+            <div className="space-y-10">
               {skillGroups.map((group) => (
-                <div key={group.title} className="space-y-2">
+                <div key={group.title} className="space-y-3">
                   <h3 className="text-sm font-medium uppercase tracking-wide text-neutral-400">
                     {group.title}
                   </h3>
@@ -75,11 +75,11 @@ export default function Home() {
 
       <Section id="projects">
         <Container>
-          <div className="reveal space-y-8">
-            <h2 className="text-2xl font-semibold tracking-tight text-neutral-100">
+          <div className="reveal">
+            <h2 className="mb-8 text-2xl font-semibold tracking-tight text-neutral-100">
               Featured Projects
             </h2>
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="grid gap-8 sm:grid-cols-2">
               {projects.map((project) => (
                 <ProjectCard key={project.title} project={project} />
               ))}
@@ -90,9 +90,9 @@ export default function Home() {
 
       <Section id="education">
         <Container>
-          <div className="reveal space-y-8">
-            <h2 className="text-2xl font-semibold tracking-tight text-neutral-100">Education</h2>
-            <div className="grid gap-6 sm:grid-cols-2">
+          <div className="reveal">
+            <h2 className="mb-8 text-2xl font-semibold tracking-tight text-neutral-100">Education</h2>
+            <div className="grid gap-8 sm:grid-cols-2">
               <article className="rounded-xl border border-white/10 bg-neutral-900/30 p-6 hover:bg-neutral-900/40">
                 <div className="space-y-2">
                   <h3 className="text-lg font-semibold text-neutral-100">
@@ -129,15 +129,15 @@ export default function Home() {
 
       <Section id="contact">
         <Container>
-          <div className="reveal space-y-6">
-            <div className="space-y-2">
+          <div className="reveal space-y-8">
+            <div className="space-y-3">
               <h2 className="text-2xl font-semibold tracking-tight text-neutral-100">Contact Me</h2>
               <p className="text-sm text-neutral-300">
                 Feel free to reach out for collaborations, opportunities, or just a quick hello.
               </p>
             </div>
 
-            <form className="max-w-xl space-y-3">
+            <form className="max-w-xl space-y-4">
               <input
                 type="text"
                 name="name"
@@ -164,7 +164,7 @@ export default function Home() {
               </button>
             </form>
 
-            <div className="flex items-center gap-5 pt-6">
+            <div className="flex items-center gap-5 pt-2">
               <a
                 href="https://github.com/lllLucario"
                 target="_blank"
