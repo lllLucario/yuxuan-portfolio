@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect } from "react";
 import Container from "@/components/layout/Container";
 import Section from "@/components/layout/Section";
 import { skillGroups } from "@/app/data/skills";
@@ -6,11 +9,29 @@ import SkillChip from "@/app/components/skills/SkillChip";
 import ProjectCard from "@/app/components/projects/ProjectCard";
 
 export default function Home() {
+  useEffect(() => {
+    const elements = document.querySelectorAll<HTMLElement>(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("reveal-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    elements.forEach((element) => observer.observe(element));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main className="pt-16">
       <Section id="hero">
         <Container>
-          <div className="flex min-h-[80vh] items-center">
+          <div className="reveal flex min-h-[80vh] items-center">
             <div className="space-y-6">
               <h1 className="bg-gradient-to-r from-neutral-100 to-neutral-400 bg-clip-text text-4xl font-semibold tracking-tight text-transparent sm:text-5xl">
                 Full-Stack Developer
@@ -32,7 +53,7 @@ export default function Home() {
 
       <Section id="skills">
         <Container>
-          <div className="space-y-8">
+          <div className="reveal space-y-8">
             <h2 className="text-2xl font-semibold tracking-tight text-neutral-100">Skills</h2>
             <div className="space-y-5">
               {skillGroups.map((group) => (
@@ -54,7 +75,7 @@ export default function Home() {
 
       <Section id="projects">
         <Container>
-          <div className="space-y-8">
+          <div className="reveal space-y-8">
             <h2 className="text-2xl font-semibold tracking-tight text-neutral-100">
               Featured Projects
             </h2>
@@ -69,7 +90,7 @@ export default function Home() {
 
       <Section id="education">
         <Container>
-          <div className="space-y-8">
+          <div className="reveal space-y-8">
             <h2 className="text-2xl font-semibold tracking-tight text-neutral-100">Education</h2>
             <div className="grid gap-6 sm:grid-cols-2">
               <article className="rounded-xl border border-white/10 bg-neutral-900/30 p-6 hover:bg-neutral-900/40">
@@ -108,7 +129,7 @@ export default function Home() {
 
       <Section id="contact">
         <Container>
-          <div className="space-y-6">
+          <div className="reveal space-y-6">
             <div className="space-y-2">
               <h2 className="text-2xl font-semibold tracking-tight text-neutral-100">Contact Me</h2>
               <p className="text-sm text-neutral-300">
