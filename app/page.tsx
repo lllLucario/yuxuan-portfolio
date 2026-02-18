@@ -3,6 +3,7 @@ import Section from "@/components/layout/Section";
 import { skillGroups } from "@/app/data/skills";
 import { projects } from "@/app/data/projects";
 import SkillChip from "@/app/components/skills/SkillChip";
+import ProjectCard from "@/app/components/projects/ProjectCard";
 
 export default function Home() {
   return (
@@ -57,26 +58,9 @@ export default function Home() {
             <h2 className="text-2xl font-semibold tracking-tight text-neutral-100">
               Featured Projects
             </h2>
-            <div className="space-y-10">
+            <div className="grid gap-6 sm:grid-cols-2">
               {projects.map((project) => (
-                <article key={project.title} className="space-y-3">
-                  <h3 className="text-xl font-medium text-neutral-100">{project.title}</h3>
-                  <p className="text-base text-neutral-300">{project.description}</p>
-                  <ul className="list-disc space-y-1 pl-5 text-neutral-300/90">
-                    {project.highlights.map((highlight) => (
-                      <li key={highlight}>{highlight}</li>
-                    ))}
-                  </ul>
-                  <p className="text-sm text-neutral-400">{project.stack.join(", ")}</p>
-                  <a
-                    href={project.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-neutral-200 hover:text-neutral-50"
-                  >
-                    View on GitHub ↗
-                  </a>
-                </article>
+                <ProjectCard key={project.title} project={project} />
               ))}
             </div>
           </div>
