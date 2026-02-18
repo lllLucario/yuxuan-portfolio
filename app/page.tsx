@@ -1,5 +1,6 @@
 import Container from "@/components/layout/Container";
 import Section from "@/components/layout/Section";
+import { skillGroups } from "@/app/data/skills";
 
 export default function Home() {
   return (
@@ -8,7 +9,7 @@ export default function Home() {
         <Container>
           <div className="flex min-h-[80vh] items-center">
             <div className="space-y-6">
-              <h1 className="text-4xl font-semibold tracking-tight text-neutral-50 sm:text-5xl">
+              <h1 className="bg-gradient-to-r from-neutral-100 to-neutral-400 bg-clip-text text-4xl font-semibold tracking-tight text-transparent sm:text-5xl">
                 Full-Stack Developer
               </h1>
               <p className="text-lg text-neutral-200 sm:text-xl">Hi, I&apos;m Yuxuan Liu</p>
@@ -28,7 +29,21 @@ export default function Home() {
 
       <Section id="skills">
         <Container>
-          <div>Skills</div>
+          <div className="space-y-8">
+            <h2 className="text-2xl font-semibold tracking-tight text-neutral-100">Skills</h2>
+            <div className="space-y-5">
+              {skillGroups.map((group) => (
+                <div key={group.title} className="space-y-2">
+                  <h3 className="text-sm font-medium uppercase tracking-wide text-neutral-400">
+                    {group.title}
+                  </h3>
+                  <p className="text-base text-neutral-200">
+                    {group.skills.map((skill) => skill.name).join(" • ")}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </Container>
       </Section>
 
