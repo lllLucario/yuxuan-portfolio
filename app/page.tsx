@@ -1,6 +1,7 @@
 import Container from "@/components/layout/Container";
 import Section from "@/components/layout/Section";
 import { skillGroups } from "@/app/data/skills";
+import SkillChip from "@/app/components/skills/SkillChip";
 
 export default function Home() {
   return (
@@ -37,9 +38,11 @@ export default function Home() {
                   <h3 className="text-sm font-medium uppercase tracking-wide text-neutral-400">
                     {group.title}
                   </h3>
-                  <p className="text-base text-neutral-200">
-                    {group.skills.map((skill) => skill.name).join(" • ")}
-                  </p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {group.skills.map((skill) => (
+                      <SkillChip key={skill.name} name={skill.name} icon={skill.icon} />
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
