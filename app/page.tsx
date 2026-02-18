@@ -69,7 +69,40 @@ export default function Home() {
 
       <Section id="education">
         <Container>
-          <div>Education</div>
+          <div className="space-y-8">
+            <h2 className="text-2xl font-semibold tracking-tight text-neutral-100">Education</h2>
+            <div className="grid gap-6 sm:grid-cols-2">
+              <article className="rounded-xl border border-white/10 bg-neutral-900/30 p-6 hover:bg-neutral-900/40">
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold text-neutral-100">
+                    Master of Science in Computer Science
+                  </h3>
+                  <p className="text-sm text-neutral-300">
+                    University of Example, Department of Computer Science
+                  </p>
+                  <p className="text-xs text-neutral-400">2022 - 2024</p>
+                  <p className="text-sm text-neutral-400">
+                    Focused on scalable web systems, distributed architecture, and product
+                    engineering.
+                  </p>
+                </div>
+              </article>
+
+              <article className="rounded-xl border border-white/10 bg-neutral-900/30 p-6 hover:bg-neutral-900/40">
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold text-neutral-100">
+                    Bachelor of Engineering in Software Engineering
+                  </h3>
+                  <p className="text-sm text-neutral-300">Example Institute of Technology</p>
+                  <p className="text-xs text-neutral-400">2018 - 2022</p>
+                  <p className="text-sm text-neutral-400">
+                    Built a strong foundation in full-stack development, databases, and team
+                    software delivery.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
         </Container>
       </Section>
 
