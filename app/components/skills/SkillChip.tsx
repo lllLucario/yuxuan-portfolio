@@ -91,7 +91,7 @@ export default function SkillChip({ name, icon }: SkillChipProps) {
   const iconNode = (icon && ICONS[icon]) || DEFAULT_ICON;
 
   return (
-    <span className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-neutral-900/60 px-3 py-1.5 text-sm text-neutral-200 hover:bg-neutral-900/80">
+    <span className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-neutral-900/60 px-3 py-1.5 text-sm text-neutral-200 transition duration-150 hover:border-white/20 hover:bg-neutral-900/80">
       <span className="text-neutral-300">{iconNode}</span>
       {name}
     </span>

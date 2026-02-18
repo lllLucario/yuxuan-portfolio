@@ -21,20 +21,35 @@ export default function Navbar() {
     >
       <Container>
         <div className="flex h-16 items-center justify-between">
-          <a href="#hero" className="text-sm text-neutral-200 hover:text-neutral-50">
+          <a
+            href="#hero"
+            className="text-sm text-neutral-200 transition duration-150 hover:text-neutral-50 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20"
+          >
             Yuxuan Liu
           </a>
           <div className="hidden items-center gap-6 sm:flex">
-            <a href="#skills" className="text-sm text-neutral-200 hover:text-neutral-50">
+            <a
+              href="#skills"
+              className="text-sm text-neutral-200 transition duration-150 hover:text-neutral-50 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20"
+            >
               Skills
             </a>
-            <a href="#projects" className="text-sm text-neutral-200 hover:text-neutral-50">
+            <a
+              href="#projects"
+              className="text-sm text-neutral-200 transition duration-150 hover:text-neutral-50 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20"
+            >
               Projects
             </a>
-            <a href="#education" className="text-sm text-neutral-200 hover:text-neutral-50">
+            <a
+              href="#education"
+              className="text-sm text-neutral-200 transition duration-150 hover:text-neutral-50 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20"
+            >
               Education
             </a>
-            <a href="#contact" className="text-sm text-neutral-200 hover:text-neutral-50">
+            <a
+              href="#contact"
+              className="text-sm text-neutral-200 transition duration-150 hover:text-neutral-50 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20"
+            >
               Contact
             </a>
           </div>

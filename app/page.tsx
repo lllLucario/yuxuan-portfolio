@@ -42,7 +42,7 @@ export default function Home() {
               </p>
               <button
                 type="button"
-                className="inline-flex items-center rounded-md bg-neutral-100 px-5 py-3 text-sm font-medium text-neutral-900 hover:bg-neutral-200"
+                className="inline-flex items-center rounded-md bg-neutral-100 px-5 py-3 text-sm font-medium text-neutral-900 transition duration-150 hover:bg-neutral-200 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20"
               >
                 View Resume
               </button>
@@ -93,7 +93,7 @@ export default function Home() {
           <div className="reveal">
             <h2 className="mb-8 text-2xl font-semibold tracking-tight text-neutral-100">Education</h2>
             <div className="grid gap-8 sm:grid-cols-2">
-              <article className="rounded-xl border border-white/10 bg-neutral-900/30 p-6 hover:bg-neutral-900/40">
+              <article className="rounded-xl border border-white/10 bg-neutral-900/30 p-6 transition duration-200 hover:border-white/20 hover:bg-neutral-900/60">
                 <div className="space-y-2">
                   <h3 className="text-lg font-semibold text-neutral-100">
                     Master of Science in Computer Science
@@ -109,7 +109,7 @@ export default function Home() {
                 </div>
               </article>
 
-              <article className="rounded-xl border border-white/10 bg-neutral-900/30 p-6 hover:bg-neutral-900/40">
+              <article className="rounded-xl border border-white/10 bg-neutral-900/30 p-6 transition duration-200 hover:border-white/20 hover:bg-neutral-900/60">
                 <div className="space-y-2">
                   <h3 className="text-lg font-semibold text-neutral-100">
                     Bachelor of Engineering in Software Engineering
@@ -142,23 +142,23 @@ export default function Home() {
                 type="text"
                 name="name"
                 placeholder="Name"
-                className="w-full rounded-md border border-white/10 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-100 placeholder:text-neutral-500 transition-colors duration-150 hover:border-white/20 focus:border-white/30 focus:ring-1 focus:ring-white/20 focus:outline-none"
+                className="w-full rounded-md border border-white/10 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-100 placeholder:text-neutral-500 transition duration-150 hover:border-white/20 focus:border-white/30 focus:ring-1 focus:ring-white/20 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20"
               />
               <input
                 type="email"
                 name="email"
                 placeholder="Email"
-                className="w-full rounded-md border border-white/10 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-100 placeholder:text-neutral-500 transition-colors duration-150 hover:border-white/20 focus:border-white/30 focus:ring-1 focus:ring-white/20 focus:outline-none"
+                className="w-full rounded-md border border-white/10 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-100 placeholder:text-neutral-500 transition duration-150 hover:border-white/20 focus:border-white/30 focus:ring-1 focus:ring-white/20 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20"
               />
               <textarea
                 name="message"
                 placeholder="Message"
                 rows={5}
-                className="min-h-[120px] w-full resize-none rounded-md border border-white/10 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-100 placeholder:text-neutral-500 transition-colors duration-150 hover:border-white/20 focus:border-white/30 focus:ring-1 focus:ring-white/20 focus:outline-none"
+                className="min-h-[120px] w-full resize-none rounded-md border border-white/10 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-100 placeholder:text-neutral-500 transition duration-150 hover:border-white/20 focus:border-white/30 focus:ring-1 focus:ring-white/20 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20"
               />
               <button
                 type="button"
-                className="rounded-md bg-neutral-100 px-4 py-2 text-sm font-medium text-neutral-900 transition hover:bg-neutral-200 active:scale-[0.99]"
+                className="rounded-md bg-neutral-100 px-4 py-2 text-sm font-medium text-neutral-900 transition duration-150 hover:bg-neutral-200 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20"
               >
                 Send Message
               </button>
@@ -170,7 +170,7 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="GitHub"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-neutral-900/40 text-neutral-300 transition-all duration-150 hover:border-white/20 hover:bg-neutral-900/70 hover:text-neutral-100 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/30 active:scale-[0.97]"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-neutral-900/40 text-neutral-300 transition duration-150 hover:border-white/20 hover:bg-neutral-900/70 hover:text-neutral-100 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20"
               >
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor">
                   <path
@@ -186,7 +186,7 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="LinkedIn"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-neutral-900/40 text-neutral-300 transition-all duration-150 hover:border-white/20 hover:bg-neutral-900/70 hover:text-neutral-100 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/30 active:scale-[0.97]"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-neutral-900/40 text-neutral-300 transition duration-150 hover:border-white/20 hover:bg-neutral-900/70 hover:text-neutral-100 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20"
               >
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor">
                   <rect x="4" y="4" width="16" height="16" rx="2.5" strokeWidth="1.5" />
@@ -196,7 +196,7 @@ export default function Home() {
               <a
                 href="mailto:placeholder@example.com"
                 aria-label="Email"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-neutral-900/40 text-neutral-300 transition-all duration-150 hover:border-white/20 hover:bg-neutral-900/70 hover:text-neutral-100 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/30 active:scale-[0.97]"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-neutral-900/40 text-neutral-300 transition duration-150 hover:border-white/20 hover:bg-neutral-900/70 hover:text-neutral-100 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20"
               >
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor">
                   <rect x="3.5" y="6.5" width="17" height="11" rx="2" strokeWidth="1.5" />

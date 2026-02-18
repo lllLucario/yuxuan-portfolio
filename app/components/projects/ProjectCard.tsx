@@ -6,13 +6,13 @@ type ProjectCardProps = {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <article className="group relative rounded-xl border border-white/10 bg-neutral-900/40 transition hover:border-white/20 hover:bg-neutral-900/60">
+    <article className="group relative rounded-xl border border-white/10 bg-neutral-900/40 transition duration-200 hover:border-white/20 hover:bg-neutral-900/60">
       <a
         href={project.href}
         target="_blank"
         rel="noreferrer noopener"
         aria-label={`View ${project.title} on GitHub`}
-        className="absolute inset-0 z-10 rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
+        className="absolute inset-0 z-10 rounded-xl focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
       />
 
       <div className="relative z-0 space-y-8 p-6 transition group-hover:blur-[2px] group-hover:opacity-60 group-focus-within:blur-[2px] group-focus-within:opacity-60 sm:p-8">
