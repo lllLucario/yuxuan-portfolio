@@ -108,7 +108,82 @@ export default function Home() {
 
       <Section id="contact">
         <Container>
-          <div>Contact</div>
+          <div className="space-y-6">
+            <div className="space-y-2">
+              <h2 className="text-2xl font-semibold tracking-tight text-neutral-100">Contact Me</h2>
+              <p className="text-sm text-neutral-300">
+                Feel free to reach out for collaborations, opportunities, or just a quick hello.
+              </p>
+            </div>
+
+            <form className="max-w-xl space-y-3">
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                className="w-full rounded-md border border-white/10 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-100 placeholder:text-neutral-500 transition-colors duration-150 hover:border-white/20 focus:border-white/30 focus:ring-1 focus:ring-white/20 focus:outline-none"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                className="w-full rounded-md border border-white/10 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-100 placeholder:text-neutral-500 transition-colors duration-150 hover:border-white/20 focus:border-white/30 focus:ring-1 focus:ring-white/20 focus:outline-none"
+              />
+              <textarea
+                name="message"
+                placeholder="Message"
+                rows={5}
+                className="min-h-[120px] w-full resize-none rounded-md border border-white/10 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-100 placeholder:text-neutral-500 transition-colors duration-150 hover:border-white/20 focus:border-white/30 focus:ring-1 focus:ring-white/20 focus:outline-none"
+              />
+              <button
+                type="button"
+                className="rounded-md bg-neutral-100 px-4 py-2 text-sm font-medium text-neutral-900 transition hover:bg-neutral-200 active:scale-[0.99]"
+              >
+                Send Message
+              </button>
+            </form>
+
+            <div className="flex items-center gap-5 pt-6">
+              <a
+                href="https://github.com/lllLucario"
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="GitHub"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-neutral-900/40 text-neutral-300 transition-all duration-150 hover:border-white/20 hover:bg-neutral-900/70 hover:text-neutral-100 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/30 active:scale-[0.97]"
+              >
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor">
+                  <path
+                    d="M9 19c-4 1.2-4-2-6-2m12 4v-3.1c0-.9.1-1.4-.4-2c1.8-.2 3.9-.9 3.9-4.1 0-.9-.3-1.7-.9-2.3.1-.3.4-1.2-.1-2.5 0 0-.8-.3-2.6 1A8.9 8.9 0 0012 7.8c-.9 0-1.9.1-2.8.4-1.8-1.3-2.6-1-2.6-1-.5 1.3-.2 2.2-.1 2.5-.6.6-.9 1.4-.9 2.3 0 3.2 2.1 3.9 3.9 4.1-.5.6-.5 1.2-.5 2V21"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="LinkedIn"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-neutral-900/40 text-neutral-300 transition-all duration-150 hover:border-white/20 hover:bg-neutral-900/70 hover:text-neutral-100 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/30 active:scale-[0.97]"
+              >
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor">
+                  <rect x="4" y="4" width="16" height="16" rx="2.5" strokeWidth="1.5" />
+                  <path d="M8 10v6M8 8h.01M12 16v-3.3c0-1.6 2-1.8 2 0V16m0-2.6V10" strokeWidth="1.5" />
+                </svg>
+              </a>
+              <a
+                href="mailto:placeholder@example.com"
+                aria-label="Email"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-neutral-900/40 text-neutral-300 transition-all duration-150 hover:border-white/20 hover:bg-neutral-900/70 hover:text-neutral-100 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/30 active:scale-[0.97]"
+              >
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor">
+                  <rect x="3.5" y="6.5" width="17" height="11" rx="2" strokeWidth="1.5" />
+                  <path d="M4.5 8l7.5 5l7.5-5" strokeWidth="1.5" strokeLinecap="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
         </Container>
       </Section>
     </main>
