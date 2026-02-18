@@ -3,7 +3,7 @@ import Section from "@/components/layout/Section";
 
 export default function Home() {
   return (
-    <main>
+    <main className="pt-16">
       <Section id="hero">
         <Container>
           <div>Hero</div>
