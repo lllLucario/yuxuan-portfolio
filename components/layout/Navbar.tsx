@@ -20,7 +20,7 @@ export default function Navbar() {
       }`}
     >
       <Container>
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-14 items-center justify-between sm:h-16">
           <a
             href="#hero"
             className="text-sm text-neutral-200 transition duration-150 hover:text-neutral-50 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20"
