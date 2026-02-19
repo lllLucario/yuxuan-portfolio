@@ -101,7 +101,7 @@ export default function Home() {
               Education
             </h2>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-              <article className="rounded-xl border border-black/10 bg-white p-6 transition duration-200 hover:border-black/20 hover:bg-neutral-100 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20 dark:hover:bg-neutral-900/60">
+              <article className="rounded-xl border border-black/10 bg-white p-6 transition duration-200 hover:scale-[1.08] hover:border-black/20 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20">
                 <div className="space-y-2">
                   <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
                     Master of Science in Computer Science
@@ -117,7 +117,7 @@ export default function Home() {
                 </div>
               </article>
 
-              <article className="rounded-xl border border-black/10 bg-white p-6 transition duration-200 hover:border-black/20 hover:bg-neutral-100 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20 dark:hover:bg-neutral-900/60">
+              <article className="rounded-xl border border-black/10 bg-white p-6 transition duration-200 hover:scale-[1.08] hover:border-black/20 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20">
                 <div className="space-y-2">
                   <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
                     Bachelor of Engineering in Software Engineering
