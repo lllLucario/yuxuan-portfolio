@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import Image from "next/image";
 import Container from "@/components/layout/Container";
 import Section from "@/components/layout/Section";
 import { skillGroups } from "@/app/data/skills";
@@ -185,7 +184,14 @@ export default function Home() {
                 aria-label="GitHub"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-black/10 bg-neutral-200 text-neutral-700 transition duration-150 hover:border-black/20 hover:bg-neutral-300 hover:text-neutral-900 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/40 dark:text-neutral-300 dark:hover:border-white/20 dark:hover:bg-neutral-900/70 dark:hover:text-neutral-100 dark:focus-visible:ring-white/20"
               >
-                <Image src="/github-icon.svg" alt="" width={16} height={16} className="h-4 w-4" />
+                <span
+                  aria-hidden="true"
+                  className="h-4 w-4 bg-current"
+                  style={{
+                    WebkitMask: 'url("/github-icon.svg") center / contain no-repeat',
+                    mask: 'url("/github-icon.svg") center / contain no-repeat',
+                  }}
+                />
               </a>
               <a
                 href="https://www.linkedin.com"
@@ -194,14 +200,28 @@ export default function Home() {
                 aria-label="LinkedIn"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-black/10 bg-neutral-200 text-neutral-700 transition duration-150 hover:border-black/20 hover:bg-neutral-300 hover:text-neutral-900 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/40 dark:text-neutral-300 dark:hover:border-white/20 dark:hover:bg-neutral-900/70 dark:hover:text-neutral-100 dark:focus-visible:ring-white/20"
               >
-                <Image src="/linkedin-icon.svg" alt="" width={16} height={16} className="h-4 w-4" />
+                <span
+                  aria-hidden="true"
+                  className="h-4 w-4 bg-current"
+                  style={{
+                    WebkitMask: 'url("/linkedin-icon.svg") center / contain no-repeat',
+                    mask: 'url("/linkedin-icon.svg") center / contain no-repeat',
+                  }}
+                />
               </a>
               <a
                 href="mailto:placeholder@example.com"
                 aria-label="Email"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-black/10 bg-neutral-200 text-neutral-700 transition duration-150 hover:border-black/20 hover:bg-neutral-300 hover:text-neutral-900 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/40 dark:text-neutral-300 dark:hover:border-white/20 dark:hover:bg-neutral-900/70 dark:hover:text-neutral-100 dark:focus-visible:ring-white/20"
               >
-                <Image src="/email-icon.svg" alt="" width={16} height={16} className="h-4 w-4" />
+                <span
+                  aria-hidden="true"
+                  className="h-4 w-4 bg-current"
+                  style={{
+                    WebkitMask: 'url("/email-icon.svg") center / contain no-repeat',
+                    mask: 'url("/email-icon.svg") center / contain no-repeat',
+                  }}
+                />
               </a>
             </div>
           </div>
