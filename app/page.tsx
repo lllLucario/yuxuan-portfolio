@@ -70,7 +70,7 @@ export default function Home() {
                   </h3>
                   <div className="mt-3 flex flex-wrap gap-2 sm:gap-3">
                     {group.skills.map((skill) => (
-                      <SkillChip key={skill.name} name={skill.name} icon={skill.icon} />
+                      <SkillChip key={skill.name} name={skill.name} icon={skill.icon} tone={skill.tone} />
                     ))}
                   </div>
                 </div>
