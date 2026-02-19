@@ -34,18 +34,20 @@ export default function Home() {
         <Container>
           <div className="reveal flex min-h-[70vh] items-center sm:min-h-[80vh]">
             <div className="space-y-5 sm:space-y-6">
-              <h1 className="bg-gradient-to-r from-neutral-100 to-neutral-400 bg-clip-text text-3xl font-semibold tracking-tight text-transparent sm:text-4xl lg:text-5xl">
+              <h1 className="bg-gradient-to-r from-neutral-700 to-neutral-500 bg-clip-text text-3xl font-semibold tracking-tight text-transparent dark:from-neutral-100 dark:to-neutral-400 sm:text-4xl lg:text-5xl">
                 Full-Stack Developer
               </h1>
-              <p className="text-lg text-neutral-200 sm:text-xl">Hi, I&apos;m Yuxuan Liu</p>
-              <p className="max-w-2xl text-sm text-neutral-300/80 sm:text-base">
+              <p className="text-lg text-neutral-700 dark:text-neutral-200 sm:text-xl">
+                Hi, I&apos;m Yuxuan Liu
+              </p>
+              <p className="max-w-2xl text-sm text-neutral-600/80 dark:text-neutral-300/80 sm:text-base">
                 I build clean, user-focused web applications.
               </p>
               <a
                 href="/resume.pdf"
                 target="_blank"
                 rel="noreferrer noopener"
-                className="inline-flex items-center rounded-md bg-neutral-100 px-5 py-3 text-sm font-medium text-neutral-900 transition duration-150 hover:bg-neutral-200 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20"
+                className="inline-flex items-center rounded-md bg-neutral-900 px-5 py-3 text-sm font-medium text-neutral-100 transition duration-150 hover:bg-neutral-700 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200 dark:focus-visible:ring-white/20"
               >
                 View Resume
               </a>
@@ -57,13 +59,13 @@ export default function Home() {
       <Section id="skills">
         <Container>
           <div className="reveal">
-            <h2 className="mb-8 text-xl font-semibold tracking-tight text-neutral-100 sm:text-2xl">
+            <h2 className="mb-8 text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl">
               Skills
             </h2>
             <div className="space-y-10">
               {skillGroups.map((group) => (
                 <div key={group.title} className="space-y-3">
-                  <h3 className="text-sm font-medium uppercase tracking-wide text-neutral-400">
+                  <h3 className="text-sm font-medium uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
                     {group.title}
                   </h3>
                   <div className="mt-3 flex flex-wrap gap-2 sm:gap-3">
@@ -81,7 +83,7 @@ export default function Home() {
       <Section id="projects">
         <Container>
           <div className="reveal">
-            <h2 className="mb-8 text-xl font-semibold tracking-tight text-neutral-100 sm:text-2xl">
+            <h2 className="mb-8 text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl">
               Featured Projects
             </h2>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
@@ -96,34 +98,36 @@ export default function Home() {
       <Section id="education">
         <Container>
           <div className="reveal">
-            <h2 className="mb-8 text-xl font-semibold tracking-tight text-neutral-100 sm:text-2xl">
+            <h2 className="mb-8 text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl">
               Education
             </h2>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-              <article className="rounded-xl border border-white/10 bg-neutral-900/30 p-6 transition duration-200 hover:border-white/20 hover:bg-neutral-900/60">
+              <article className="rounded-xl border border-black/10 bg-neutral-200/50 p-6 transition duration-200 hover:border-black/20 hover:bg-neutral-200/70 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20 dark:hover:bg-neutral-900/60">
                 <div className="space-y-2">
-                  <h3 className="text-lg font-semibold text-neutral-100">
+                  <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
                     Master of Science in Computer Science
                   </h3>
-                  <p className="text-sm text-neutral-300 sm:text-base">
+                  <p className="text-sm text-neutral-600 dark:text-neutral-300 sm:text-base">
                     University of Example, Department of Computer Science
                   </p>
-                  <p className="text-xs text-neutral-400">2022 - 2024</p>
-                  <p className="text-sm text-neutral-400 sm:text-base">
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400">2022 - 2024</p>
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 sm:text-base">
                     Focused on scalable web systems, distributed architecture, and product
                     engineering.
                   </p>
                 </div>
               </article>
 
-              <article className="rounded-xl border border-white/10 bg-neutral-900/30 p-6 transition duration-200 hover:border-white/20 hover:bg-neutral-900/60">
+              <article className="rounded-xl border border-black/10 bg-neutral-200/50 p-6 transition duration-200 hover:border-black/20 hover:bg-neutral-200/70 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20 dark:hover:bg-neutral-900/60">
                 <div className="space-y-2">
-                  <h3 className="text-lg font-semibold text-neutral-100">
+                  <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
                     Bachelor of Engineering in Software Engineering
                   </h3>
-                  <p className="text-sm text-neutral-300 sm:text-base">Example Institute of Technology</p>
-                  <p className="text-xs text-neutral-400">2018 - 2022</p>
-                  <p className="text-sm text-neutral-400 sm:text-base">
+                  <p className="text-sm text-neutral-600 dark:text-neutral-300 sm:text-base">
+                    Example Institute of Technology
+                  </p>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400">2018 - 2022</p>
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 sm:text-base">
                     Built a strong foundation in full-stack development, databases, and team
                     software delivery.
                   </p>
@@ -138,10 +142,10 @@ export default function Home() {
         <Container>
           <div className="reveal space-y-8">
             <div className="space-y-3">
-              <h2 className="text-xl font-semibold tracking-tight text-neutral-100 sm:text-2xl">
+              <h2 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl">
                 Contact Me
               </h2>
-              <p className="text-sm text-neutral-300 sm:text-base">
+              <p className="text-sm text-neutral-600 dark:text-neutral-300 sm:text-base">
                 Feel free to reach out for collaborations, opportunities, or just a quick hello.
               </p>
             </div>
@@ -151,23 +155,23 @@ export default function Home() {
                 type="text"
                 name="name"
                 placeholder="Name"
-                className="w-full rounded-md border border-white/10 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-100 placeholder:text-neutral-500 transition duration-150 hover:border-white/20 focus:border-white/30 focus:ring-1 focus:ring-white/20 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20 sm:text-base"
+                className="w-full rounded-md border border-black/10 bg-neutral-50 px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-500 transition duration-150 hover:border-black/20 focus:border-black/30 focus:ring-1 focus:ring-black/20 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/50 dark:text-neutral-100 dark:hover:border-white/20 dark:focus:border-white/30 dark:focus:ring-white/20 dark:focus-visible:ring-white/20 sm:text-base"
               />
               <input
                 type="email"
                 name="email"
                 placeholder="Email"
-                className="w-full rounded-md border border-white/10 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-100 placeholder:text-neutral-500 transition duration-150 hover:border-white/20 focus:border-white/30 focus:ring-1 focus:ring-white/20 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20 sm:text-base"
+                className="w-full rounded-md border border-black/10 bg-neutral-50 px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-500 transition duration-150 hover:border-black/20 focus:border-black/30 focus:ring-1 focus:ring-black/20 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/50 dark:text-neutral-100 dark:hover:border-white/20 dark:focus:border-white/30 dark:focus:ring-white/20 dark:focus-visible:ring-white/20 sm:text-base"
               />
               <textarea
                 name="message"
                 placeholder="Message"
                 rows={5}
-                className="min-h-[120px] w-full resize-none rounded-md border border-white/10 bg-neutral-900/50 px-3 py-2 text-sm text-neutral-100 placeholder:text-neutral-500 transition duration-150 hover:border-white/20 focus:border-white/30 focus:ring-1 focus:ring-white/20 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20 sm:text-base"
+                className="min-h-[120px] w-full resize-none rounded-md border border-black/10 bg-neutral-50 px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-500 transition duration-150 hover:border-black/20 focus:border-black/30 focus:ring-1 focus:ring-black/20 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/50 dark:text-neutral-100 dark:hover:border-white/20 dark:focus:border-white/30 dark:focus:ring-white/20 dark:focus-visible:ring-white/20 sm:text-base"
               />
               <button
                 type="button"
-                className="rounded-md bg-neutral-100 px-4 py-2 text-sm font-medium text-neutral-900 transition duration-150 hover:bg-neutral-200 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20"
+                className="rounded-md bg-neutral-900 px-4 py-2 text-sm font-medium text-neutral-100 transition duration-150 hover:bg-neutral-700 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200 dark:focus-visible:ring-white/20"
               >
                 Send Message
               </button>
@@ -179,7 +183,7 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="GitHub"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-neutral-900/40 text-neutral-300 transition duration-150 hover:border-white/20 hover:bg-neutral-900/70 hover:text-neutral-100 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-black/10 bg-neutral-200 text-neutral-700 transition duration-150 hover:border-black/20 hover:bg-neutral-300 hover:text-neutral-900 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/40 dark:text-neutral-300 dark:hover:border-white/20 dark:hover:bg-neutral-900/70 dark:hover:text-neutral-100 dark:focus-visible:ring-white/20"
               >
                 <Image src="/github-icon.svg" alt="" width={16} height={16} className="h-4 w-4" />
               </a>
@@ -188,14 +192,14 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="LinkedIn"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-neutral-900/40 text-neutral-300 transition duration-150 hover:border-white/20 hover:bg-neutral-900/70 hover:text-neutral-100 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-black/10 bg-neutral-200 text-neutral-700 transition duration-150 hover:border-black/20 hover:bg-neutral-300 hover:text-neutral-900 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/40 dark:text-neutral-300 dark:hover:border-white/20 dark:hover:bg-neutral-900/70 dark:hover:text-neutral-100 dark:focus-visible:ring-white/20"
               >
                 <Image src="/linkedin-icon.svg" alt="" width={16} height={16} className="h-4 w-4" />
               </a>
               <a
                 href="mailto:placeholder@example.com"
                 aria-label="Email"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-neutral-900/40 text-neutral-300 transition duration-150 hover:border-white/20 hover:bg-neutral-900/70 hover:text-neutral-100 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-black/10 bg-neutral-200 text-neutral-700 transition duration-150 hover:border-black/20 hover:bg-neutral-300 hover:text-neutral-900 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/40 dark:text-neutral-300 dark:hover:border-white/20 dark:hover:bg-neutral-900/70 dark:hover:text-neutral-100 dark:focus-visible:ring-white/20"
               >
                 <Image src="/email-icon.svg" alt="" width={16} height={16} className="h-4 w-4" />
               </a>

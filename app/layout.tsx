@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Yuxuan Liu",
+    default: "Yuxuan Liu — Portfolio",
     template: "%s | Yuxuan Liu",
   },
   description: "Full-Stack Developer portfolio showcasing projects and skills.",
@@ -23,13 +23,30 @@ export const metadata: Metadata = {
   authors: [{ name: "Yuxuan Liu" }],
 };
 
+const themeInitScript = `
+(() => {
+  try {
+    const stored = localStorage.getItem("theme");
+    const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const theme = stored === "light" || stored === "dark" ? stored : (systemDark ? "dark" : "light");
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(theme);
+  } catch {
+    document.documentElement.classList.add("dark");
+  }
+})();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
