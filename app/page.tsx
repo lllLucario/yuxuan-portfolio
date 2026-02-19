@@ -101,7 +101,7 @@ export default function Home() {
               Education
             </h2>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-              <article className="rounded-xl border border-black/10 bg-neutral-200/50 p-6 transition duration-200 hover:border-black/20 hover:bg-neutral-200/70 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20 dark:hover:bg-neutral-900/60">
+              <article className="rounded-xl border border-black/10 bg-white p-6 transition duration-200 hover:border-black/20 hover:bg-neutral-100 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20 dark:hover:bg-neutral-900/60">
                 <div className="space-y-2">
                   <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
                     Master of Science in Computer Science
@@ -117,7 +117,7 @@ export default function Home() {
                 </div>
               </article>
 
-              <article className="rounded-xl border border-black/10 bg-neutral-200/50 p-6 transition duration-200 hover:border-black/20 hover:bg-neutral-200/70 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20 dark:hover:bg-neutral-900/60">
+              <article className="rounded-xl border border-black/10 bg-white p-6 transition duration-200 hover:border-black/20 hover:bg-neutral-100 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20 dark:hover:bg-neutral-900/60">
                 <div className="space-y-2">
                   <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
                     Bachelor of Engineering in Software Engineering
@@ -154,19 +154,19 @@ export default function Home() {
                 type="text"
                 name="name"
                 placeholder="Name"
-                className="w-full rounded-md border border-black/10 bg-neutral-50 px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-500 transition duration-150 hover:border-black/20 focus:border-black/30 focus:ring-1 focus:ring-black/20 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/50 dark:text-neutral-100 dark:hover:border-white/20 dark:focus:border-white/30 dark:focus:ring-white/20 dark:focus-visible:ring-white/20 sm:text-base"
+                className="w-full rounded-md border border-black/10 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-500 transition duration-150 hover:border-black/20 focus:border-black/30 focus:ring-1 focus:ring-black/20 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/50 dark:text-neutral-100 dark:hover:border-white/20 dark:focus:border-white/30 dark:focus:ring-white/20 dark:focus-visible:ring-white/20 sm:text-base"
               />
               <input
                 type="email"
                 name="email"
                 placeholder="Email"
-                className="w-full rounded-md border border-black/10 bg-neutral-50 px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-500 transition duration-150 hover:border-black/20 focus:border-black/30 focus:ring-1 focus:ring-black/20 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/50 dark:text-neutral-100 dark:hover:border-white/20 dark:focus:border-white/30 dark:focus:ring-white/20 dark:focus-visible:ring-white/20 sm:text-base"
+                className="w-full rounded-md border border-black/10 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-500 transition duration-150 hover:border-black/20 focus:border-black/30 focus:ring-1 focus:ring-black/20 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/50 dark:text-neutral-100 dark:hover:border-white/20 dark:focus:border-white/30 dark:focus:ring-white/20 dark:focus-visible:ring-white/20 sm:text-base"
               />
               <textarea
                 name="message"
                 placeholder="Message"
                 rows={5}
-                className="min-h-[120px] w-full resize-none rounded-md border border-black/10 bg-neutral-50 px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-500 transition duration-150 hover:border-black/20 focus:border-black/30 focus:ring-1 focus:ring-black/20 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/50 dark:text-neutral-100 dark:hover:border-white/20 dark:focus:border-white/30 dark:focus:ring-white/20 dark:focus-visible:ring-white/20 sm:text-base"
+                className="min-h-[120px] w-full resize-none rounded-md border border-black/10 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-500 transition duration-150 hover:border-black/20 focus:border-black/30 focus:ring-1 focus:ring-black/20 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/50 dark:text-neutral-100 dark:hover:border-white/20 dark:focus:border-white/30 dark:focus:ring-white/20 dark:focus-visible:ring-white/20 sm:text-base"
               />
               <button
                 type="button"
@@ -182,7 +182,7 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="GitHub"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-black/10 bg-neutral-200 text-neutral-700 transition duration-150 hover:border-black/20 hover:bg-neutral-300 hover:text-neutral-900 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/40 dark:text-neutral-300 dark:hover:border-white/20 dark:hover:bg-neutral-900/70 dark:hover:text-neutral-100 dark:focus-visible:ring-white/20"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-black/10 bg-white text-neutral-700 transition duration-150 hover:border-black/20 hover:bg-neutral-100 hover:text-neutral-900 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/40 dark:text-neutral-300 dark:hover:border-white/20 dark:hover:bg-neutral-900/70 dark:hover:text-neutral-100 dark:focus-visible:ring-white/20"
               >
                 <span
                   aria-hidden="true"
@@ -198,7 +198,7 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="LinkedIn"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-black/10 bg-neutral-200 text-neutral-700 transition duration-150 hover:border-black/20 hover:bg-neutral-300 hover:text-neutral-900 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/40 dark:text-neutral-300 dark:hover:border-white/20 dark:hover:bg-neutral-900/70 dark:hover:text-neutral-100 dark:focus-visible:ring-white/20"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-black/10 bg-white text-neutral-700 transition duration-150 hover:border-black/20 hover:bg-neutral-100 hover:text-neutral-900 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/40 dark:text-neutral-300 dark:hover:border-white/20 dark:hover:bg-neutral-900/70 dark:hover:text-neutral-100 dark:focus-visible:ring-white/20"
               >
                 <span
                   aria-hidden="true"
@@ -212,7 +212,7 @@ export default function Home() {
               <a
                 href="mailto:placeholder@example.com"
                 aria-label="Email"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-black/10 bg-neutral-200 text-neutral-700 transition duration-150 hover:border-black/20 hover:bg-neutral-300 hover:text-neutral-900 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/40 dark:text-neutral-300 dark:hover:border-white/20 dark:hover:bg-neutral-900/70 dark:hover:text-neutral-100 dark:focus-visible:ring-white/20"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-black/10 bg-white text-neutral-700 transition duration-150 hover:border-black/20 hover:bg-neutral-100 hover:text-neutral-900 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/40 dark:text-neutral-300 dark:hover:border-white/20 dark:hover:bg-neutral-900/70 dark:hover:text-neutral-100 dark:focus-visible:ring-white/20"
               >
                 <span
                   aria-hidden="true"

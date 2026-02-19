@@ -7,7 +7,10 @@
   --bg-base: #ffffff;
   --bg-accent-1: rgba(236, 72, 153, 0.18);
   --bg-accent-2: rgba(168, 85, 247, 0.18);
+  --bg-sheen: rgba(255, 255, 255, 0);
   --dot-color: rgba(0, 0, 0, 0.1);
+  --mx: 50vw;
+  --my: 50vh;
 }
 
 @theme inline {
@@ -30,9 +33,10 @@ html.dark {
 }
 
 .dark {
-  --bg-base: #0a0a0a;
-  --bg-accent-1: rgba(59, 130, 246, 0.34);
-  --bg-accent-2: rgba(37, 99, 235, 0.22);
+  --bg-base: #120a1f;
+  --bg-accent-1: rgba(129, 82, 184, 0.26);
+  --bg-accent-2: rgba(104, 63, 153, 0.2);
+  --bg-sheen: rgba(214, 186, 255, 0.04);
   --dot-color: rgba(255, 255, 255, 0.16);
 }
 
@@ -41,8 +45,9 @@ body {
   position: relative;
   background-color: var(--bg-base);
   background-image:
-    radial-gradient(circle at 18% 18%, var(--bg-accent-1), transparent 50%),
-    radial-gradient(circle at 82% 2%, var(--bg-accent-2), transparent 58%);
+    radial-gradient(ellipse 84% 110% at -12% 26%, var(--bg-accent-1) 0%, transparent 74%),
+    radial-gradient(ellipse 82% 108% at 112% 8%, var(--bg-accent-2) 0%, transparent 75%),
+    linear-gradient(120deg, transparent 30%, var(--bg-sheen) 50%, transparent 70%);
   background-attachment: fixed;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -52,19 +57,56 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
-  background-size: 20px 20px;
-  opacity: 0.72;
+  background-image: radial-gradient(var(--dot-color) 1.4px, transparent 1.4px);
+  background-size: 34px 34px;
+  opacity: 0.62;
   z-index: 0;
 }
 
-body > * {
-  position: relative;
-  z-index: 1;
+.lens-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.06);
+  mask-image: radial-gradient(
+    circle 220px at var(--mx) var(--my),
+    transparent 0%,
+    transparent 42%,
+    rgba(0, 0, 0, 0.35) 68%,
+    black 92%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle 220px at var(--mx) var(--my),
+    transparent 0%,
+    transparent 42%,
+    rgba(0, 0, 0, 0.35) 68%,
+    black 92%
+  );
+  opacity: 1;
+  transition: mask-position 0.1s linear;
+  z-index: 5;
+}
+
+html:not(.lens-enabled) .lens-overlay {
+  display: none;
+}
+
+.light .lens-overlay {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.dark .lens-overlay {
+  background: rgba(0, 0, 0, 0.35);
 }
 
 @media (max-width: 640px) {
   body::before {
+    display: none;
+  }
+
+  .lens-overlay {
     display: none;
   }
 }

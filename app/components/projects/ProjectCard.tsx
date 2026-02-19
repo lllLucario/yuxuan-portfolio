@@ -6,7 +6,7 @@ type ProjectCardProps = {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <article className="group relative rounded-xl border border-black/10 bg-neutral-200/50 transition duration-200 hover:border-black/20 hover:bg-neutral-200/70 dark:border-white/10 dark:bg-neutral-900/40 dark:hover:border-white/20 dark:hover:bg-neutral-900/60">
+    <article className="group relative rounded-xl border border-black/10 bg-white transition duration-200 hover:border-black/20 hover:bg-neutral-100 dark:border-white/10 dark:bg-neutral-900/40 dark:hover:border-white/20 dark:hover:bg-neutral-900/60">
       <a
         href={project.href}
         target="_blank"
@@ -35,7 +35,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       </div>
 
       <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100">
-        <div className="inline-flex items-center gap-2 rounded-md border border-black/10 bg-neutral-100/85 px-4 py-2 text-sm font-medium text-neutral-900 dark:border-white/10 dark:bg-neutral-950/80 dark:text-neutral-100">
+        <div className="inline-flex items-center gap-2 rounded-md border border-black/10 bg-white/90 px-4 py-2 text-sm font-medium text-neutral-900 dark:border-white/10 dark:bg-neutral-950/80 dark:text-neutral-100">
           View on GitHub ↗
         </div>
       </div>
