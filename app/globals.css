@@ -5,8 +5,8 @@
   --background: #ffffff;
   --foreground: #171717;
   --bg-base: #ffffff;
-  --bg-accent-1: rgba(236, 72, 153, 0.18);
-  --bg-accent-2: rgba(168, 85, 247, 0.18);
+  --bg-accent-1: rgba(228, 56, 142, 0.18);
+  --bg-accent-2: rgba(160, 68, 246, 0.18);
   --bg-sheen: rgba(255, 255, 255, 0);
   --dot-color: rgba(0, 0, 0, 0.16);
   --mx: 50vw;
@@ -53,38 +53,64 @@ body {
 }
 
 body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image: radial-gradient(var(--dot-color) 1.6px, transparent 1.6px);
-  background-size: 30px 30px;
-  opacity: 0.78;
-  z-index: 0;
+  content: none;
 }
 
 .lens-overlay {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  background: rgba(255, 255, 255, 0.06);
+  z-index: 5;
+}
+
+.lens-overlay::before,
+.lens-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(var(--dot-color) 1.6px, transparent 1.6px);
+  background-size: 30px 30px;
+}
+
+.lens-overlay::before {
+  opacity: 0.72;
+  filter: blur(2.6px);
+  mask-image: radial-gradient(
+    circle 380px at var(--mx) var(--my),
+    transparent 0%,
+    transparent 46%,
+    black 72%,
+    black 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle 380px at var(--mx) var(--my),
+    transparent 0%,
+    transparent 46%,
+    black 72%,
+    black 100%
+  );
+}
+
+.lens-overlay::after {
+  opacity: 0.92;
   mask-image: radial-gradient(
     circle 290px at var(--mx) var(--my),
-    transparent 0%,
-    transparent 44%,
-    rgba(0, 0, 0, 0.35) 70%,
-    black 94%
+    black 0%,
+    black 42%,
+    transparent 68%,
+    transparent 100%
   );
   -webkit-mask-image: radial-gradient(
     circle 290px at var(--mx) var(--my),
-    transparent 0%,
-    transparent 44%,
-    rgba(0, 0, 0, 0.35) 70%,
-    black 94%
+    black 0%,
+    black 42%,
+    transparent 68%,
+    transparent 100%
   );
-  opacity: 1;
+}
+
+.lens-overlay {
   transition: mask-position 0.1s linear;
   z-index: 5;
 }
@@ -93,19 +119,7 @@ html:not(.lens-enabled) .lens-overlay {
   display: none;
 }
 
-.light .lens-overlay {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.dark .lens-overlay {
-  background: rgba(0, 0, 0, 0.42);
-}
-
 @media (max-width: 640px) {
-  body::before {
-    display: none;
-  }
-
   .lens-overlay {
     display: none;
   }
