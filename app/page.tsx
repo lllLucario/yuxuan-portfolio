@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Image from "next/image";
 import Container from "@/components/layout/Container";
 import Section from "@/components/layout/Section";
 import { skillGroups } from "@/app/data/skills";
@@ -180,14 +181,7 @@ export default function Home() {
                 aria-label="GitHub"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-neutral-900/40 text-neutral-300 transition duration-150 hover:border-white/20 hover:bg-neutral-900/70 hover:text-neutral-100 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20"
               >
-                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor">
-                  <path
-                    d="M9 19c-4 1.2-4-2-6-2m12 4v-3.1c0-.9.1-1.4-.4-2c1.8-.2 3.9-.9 3.9-4.1 0-.9-.3-1.7-.9-2.3.1-.3.4-1.2-.1-2.5 0 0-.8-.3-2.6 1A8.9 8.9 0 0012 7.8c-.9 0-1.9.1-2.8.4-1.8-1.3-2.6-1-2.6-1-.5 1.3-.2 2.2-.1 2.5-.6.6-.9 1.4-.9 2.3 0 3.2 2.1 3.9 3.9 4.1-.5.6-.5 1.2-.5 2V21"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <Image src="/github-icon.svg" alt="" width={16} height={16} className="h-4 w-4" />
               </a>
               <a
                 href="https://www.linkedin.com"
@@ -196,20 +190,14 @@ export default function Home() {
                 aria-label="LinkedIn"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-neutral-900/40 text-neutral-300 transition duration-150 hover:border-white/20 hover:bg-neutral-900/70 hover:text-neutral-100 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20"
               >
-                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor">
-                  <rect x="4" y="4" width="16" height="16" rx="2.5" strokeWidth="1.5" />
-                  <path d="M8 10v6M8 8h.01M12 16v-3.3c0-1.6 2-1.8 2 0V16m0-2.6V10" strokeWidth="1.5" />
-                </svg>
+                <Image src="/linkedin-icon.svg" alt="" width={16} height={16} className="h-4 w-4" />
               </a>
               <a
                 href="mailto:placeholder@example.com"
                 aria-label="Email"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-neutral-900/40 text-neutral-300 transition duration-150 hover:border-white/20 hover:bg-neutral-900/70 hover:text-neutral-100 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20"
               >
-                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor">
-                  <rect x="3.5" y="6.5" width="17" height="11" rx="2" strokeWidth="1.5" />
-                  <path d="M4.5 8l7.5 5l7.5-5" strokeWidth="1.5" strokeLinecap="round" />
-                </svg>
+                <Image src="/email-icon.svg" alt="" width={16} height={16} className="h-4 w-4" />
               </a>
             </div>
           </div>
