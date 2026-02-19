@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Yuxuan Liu — Portfolio",
+    default: "Yuxuan Liu",
     template: "%s | Yuxuan Liu",
   },
   description: "Full-Stack Developer portfolio showcasing projects and skills.",
