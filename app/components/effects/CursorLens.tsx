@@ -5,7 +5,8 @@ import { useEffect } from "react";
 export default function CursorLens() {
   useEffect(() => {
     const media = window.matchMedia("(pointer: fine) and (hover: hover)");
-    if (!media.matches) return;
+    const desktopLike = window.innerWidth > 640;
+    if (!media.matches && !desktopLike) return;
 
     const root = document.documentElement;
     const setPosition = (x: number, y: number) => {

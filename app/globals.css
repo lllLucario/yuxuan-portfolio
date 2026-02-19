@@ -8,7 +8,7 @@
   --bg-accent-1: rgba(236, 72, 153, 0.18);
   --bg-accent-2: rgba(168, 85, 247, 0.18);
   --bg-sheen: rgba(255, 255, 255, 0);
-  --dot-color: rgba(0, 0, 0, 0.1);
+  --dot-color: rgba(0, 0, 0, 0.16);
   --mx: 50vw;
   --my: 50vh;
 }
@@ -33,11 +33,11 @@ html.dark {
 }
 
 .dark {
-  --bg-base: #120a1f;
-  --bg-accent-1: rgba(129, 82, 184, 0.26);
-  --bg-accent-2: rgba(104, 63, 153, 0.2);
-  --bg-sheen: rgba(214, 186, 255, 0.04);
-  --dot-color: rgba(255, 255, 255, 0.16);
+  --bg-base: #171231;
+  --bg-accent-1: rgba(0, 0, 0, 0.28);
+  --bg-accent-2: rgba(0, 0, 0, 0.2);
+  --bg-sheen: rgba(0, 0, 0, 0.28);
+  --dot-color: rgba(245, 245, 245, 0.28);
 }
 
 body {
@@ -45,8 +45,8 @@ body {
   position: relative;
   background-color: var(--bg-base);
   background-image:
-    radial-gradient(ellipse 84% 110% at -12% 26%, var(--bg-accent-1) 0%, transparent 74%),
-    radial-gradient(ellipse 82% 108% at 112% 8%, var(--bg-accent-2) 0%, transparent 75%),
+    radial-gradient(ellipse 95% 120% at -10% -6%, var(--bg-accent-1) 0%, transparent 78%),
+    radial-gradient(ellipse 95% 120% at 110% 106%, var(--bg-accent-2) 0%, transparent 78%),
     linear-gradient(120deg, transparent 30%, var(--bg-sheen) 50%, transparent 70%);
   background-attachment: fixed;
   font-family: Arial, Helvetica, sans-serif;
@@ -57,9 +57,9 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image: radial-gradient(var(--dot-color) 1.4px, transparent 1.4px);
-  background-size: 34px 34px;
-  opacity: 0.62;
+  background-image: radial-gradient(var(--dot-color) 1.6px, transparent 1.6px);
+  background-size: 30px 30px;
+  opacity: 0.78;
   z-index: 0;
 }
 
@@ -67,22 +67,22 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   background: rgba(255, 255, 255, 0.06);
   mask-image: radial-gradient(
-    circle 220px at var(--mx) var(--my),
+    circle 290px at var(--mx) var(--my),
     transparent 0%,
-    transparent 42%,
-    rgba(0, 0, 0, 0.35) 68%,
-    black 92%
+    transparent 44%,
+    rgba(0, 0, 0, 0.35) 70%,
+    black 94%
   );
   -webkit-mask-image: radial-gradient(
-    circle 220px at var(--mx) var(--my),
+    circle 290px at var(--mx) var(--my),
     transparent 0%,
-    transparent 42%,
-    rgba(0, 0, 0, 0.35) 68%,
-    black 92%
+    transparent 44%,
+    rgba(0, 0, 0, 0.35) 70%,
+    black 94%
   );
   opacity: 1;
   transition: mask-position 0.1s linear;
@@ -94,11 +94,11 @@ html:not(.lens-enabled) .lens-overlay {
 }
 
 .light .lens-overlay {
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .dark .lens-overlay {
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.42);
 }
 
 @media (max-width: 640px) {
