@@ -35,7 +35,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="pt-14 sm:pt-16">
+    <main className="pt-16 sm:pt-20">
       <Section id="hero">
         <Container>
           <div className="reveal flex min-h-[62vh] items-center sm:min-h-[72vh]">
@@ -72,7 +72,7 @@ export default function Home() {
               {skillGroups.map((group) => (
                 <article
                   key={group.title}
-                  className="rounded-xl border border-black/10 bg-white/12 p-5 transition duration-200 hover:scale-[1.06] hover:border-black/20 hover:bg-white/45 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20"
+                  className="rounded-xl border border-black/10 bg-white/12 p-5 transition duration-200 hover:scale-[1.06] hover:border-black/20 hover:bg-white/45 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20 dark:hover:bg-neutral-900/30"
                 >
                   <div className="mb-4 flex items-center gap-2">
                     <Image
@@ -120,7 +120,7 @@ export default function Home() {
               Education
             </h2>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-              <article className="rounded-xl border border-black/10 bg-white/12 p-6 transition duration-200 hover:scale-[1.08] hover:border-black/20 hover:bg-white/45 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20">
+              <article className="rounded-xl border border-black/10 bg-white/12 p-6 transition duration-200 hover:scale-[1.08] hover:border-black/20 hover:bg-white/45 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20 dark:hover:bg-neutral-900/30">
                 <div className="space-y-2">
                   <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
                     Master of Science in Computer Science
@@ -136,7 +136,7 @@ export default function Home() {
                 </div>
               </article>
 
-              <article className="rounded-xl border border-black/10 bg-white/12 p-6 transition duration-200 hover:scale-[1.08] hover:border-black/20 hover:bg-white/45 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20">
+              <article className="rounded-xl border border-black/10 bg-white/12 p-6 transition duration-200 hover:scale-[1.08] hover:border-black/20 hover:bg-white/45 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20 dark:hover:bg-neutral-900/30">
                 <div className="space-y-2">
                   <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
                     Bachelor of Engineering in Software Engineering
@@ -246,6 +246,14 @@ export default function Home() {
           </div>
         </Container>
       </Section>
+
+      <footer className="pb-10 pt-2 sm:pb-14">
+        <Container>
+          <p className="text-xs text-neutral-500 dark:text-neutral-400">
+            © {new Date().getFullYear()} Yuxuan Liu
+          </p>
+        </Container>
+      </footer>
     </main>
   );
 }
