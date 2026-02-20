@@ -72,7 +72,7 @@ export default function Home() {
               {skillGroups.map((group) => (
                 <article
                   key={group.title}
-                  className="rounded-xl border border-black/10 bg-transparent p-5 transition duration-200 hover:scale-[1.06] hover:border-black/20 hover:bg-white/35 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20"
+                  className="rounded-xl border border-black/10 bg-white/12 p-5 transition duration-200 hover:scale-[1.06] hover:border-black/20 hover:bg-white/45 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20"
                 >
                   <div className="mb-4 flex items-center gap-2">
                     <Image
@@ -82,7 +82,7 @@ export default function Home() {
                       height={26}
                       className="h-[26px] w-[26px]"
                     />
-                    <h3 className="text-base font-semibold uppercase tracking-wide text-neutral-600 dark:text-neutral-300">
+                    <h3 className="text-base font-semibold tracking-wide text-neutral-600 dark:text-neutral-300">
                       {group.title}
                     </h3>
                   </div>
@@ -120,7 +120,7 @@ export default function Home() {
               Education
             </h2>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-              <article className="rounded-xl border border-black/10 bg-transparent p-6 transition duration-200 hover:scale-[1.08] hover:border-black/20 hover:bg-white/35 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20">
+              <article className="rounded-xl border border-black/10 bg-white/12 p-6 transition duration-200 hover:scale-[1.08] hover:border-black/20 hover:bg-white/45 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20">
                 <div className="space-y-2">
                   <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
                     Master of Science in Computer Science
@@ -136,7 +136,7 @@ export default function Home() {
                 </div>
               </article>
 
-              <article className="rounded-xl border border-black/10 bg-transparent p-6 transition duration-200 hover:scale-[1.08] hover:border-black/20 hover:bg-white/35 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20">
+              <article className="rounded-xl border border-black/10 bg-white/12 p-6 transition duration-200 hover:scale-[1.08] hover:border-black/20 hover:bg-white/45 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20">
                 <div className="space-y-2">
                   <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
                     Bachelor of Engineering in Software Engineering
