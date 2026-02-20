@@ -6,7 +6,7 @@ type ProjectCardProps = {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <article className="group relative rounded-xl border border-black/10 bg-white transition duration-200 hover:scale-[1.08] hover:border-black/20 hover:bg-neutral-100 dark:border-white/10 dark:bg-neutral-900/40 dark:hover:border-white/20 dark:hover:bg-neutral-900/60">
+    <article className="group relative rounded-xl border border-black/10 bg-transparent transition duration-200 hover:scale-[1.08] hover:border-black/20 hover:bg-white/35 dark:border-white/10 dark:bg-neutral-900/40 dark:hover:border-white/20 dark:hover:bg-neutral-900/60">
       <a
         href={project.href}
         target="_blank"

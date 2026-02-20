@@ -1,12 +1,19 @@
 "use client";
 
 import { useEffect } from "react";
+import Image from "next/image";
 import Container from "@/components/layout/Container";
 import Section from "@/components/layout/Section";
 import { skillGroups } from "@/app/data/skills";
 import { projects } from "@/app/data/projects";
 import SkillChip from "@/app/components/skills/SkillChip";
 import ProjectCard from "@/app/components/projects/ProjectCard";
+
+const SKILL_GROUP_ICONS: Record<string, string> = {
+  Frontend: "/frontend-icon.svg",
+  Backend: "/backend-icon.svg",
+  Tools: "/tools-icon.svg",
+};
 
 export default function Home() {
   useEffect(() => {
@@ -31,7 +38,7 @@ export default function Home() {
     <main className="pt-14 sm:pt-16">
       <Section id="hero">
         <Container>
-          <div className="reveal flex min-h-[70vh] items-center sm:min-h-[80vh]">
+          <div className="reveal flex min-h-[62vh] items-center sm:min-h-[72vh]">
             <div className="space-y-5 sm:space-y-6">
               <h1 className="bg-gradient-to-r from-neutral-700 to-neutral-500 bg-clip-text text-3xl font-semibold tracking-tight text-transparent dark:from-neutral-100 dark:to-neutral-400 sm:text-4xl lg:text-5xl">
                 Full-Stack Developer
@@ -61,18 +68,30 @@ export default function Home() {
             <h2 className="mb-8 text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl">
               Skills
             </h2>
-            <div className="space-y-10">
+            <div className="grid grid-cols-1 gap-6">
               {skillGroups.map((group) => (
-                <div key={group.title} className="space-y-3">
-                  <h3 className="text-sm font-medium uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
-                    {group.title}
-                  </h3>
-                  <div className="mt-3 flex flex-wrap gap-2 sm:gap-3">
+                <article
+                  key={group.title}
+                  className="rounded-xl border border-black/10 bg-transparent p-5 transition duration-200 hover:scale-[1.06] hover:border-black/20 hover:bg-white/35 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20"
+                >
+                  <div className="mb-4 flex items-center gap-2">
+                    <Image
+                      src={SKILL_GROUP_ICONS[group.title] || "/file.svg"}
+                      alt=""
+                      width={26}
+                      height={26}
+                      className="h-[26px] w-[26px]"
+                    />
+                    <h3 className="text-base font-semibold uppercase tracking-wide text-neutral-600 dark:text-neutral-300">
+                      {group.title}
+                    </h3>
+                  </div>
+                  <div className="flex flex-wrap gap-2 sm:gap-3">
                     {group.skills.map((skill) => (
                       <SkillChip key={skill.name} name={skill.name} icon={skill.icon} tone={skill.tone} />
                     ))}
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </div>
@@ -101,7 +120,7 @@ export default function Home() {
               Education
             </h2>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-              <article className="rounded-xl border border-black/10 bg-white p-6 transition duration-200 hover:scale-[1.08] hover:border-black/20 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20">
+              <article className="rounded-xl border border-black/10 bg-transparent p-6 transition duration-200 hover:scale-[1.08] hover:border-black/20 hover:bg-white/35 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20">
                 <div className="space-y-2">
                   <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
                     Master of Science in Computer Science
@@ -117,7 +136,7 @@ export default function Home() {
                 </div>
               </article>
 
-              <article className="rounded-xl border border-black/10 bg-white p-6 transition duration-200 hover:scale-[1.08] hover:border-black/20 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20">
+              <article className="rounded-xl border border-black/10 bg-transparent p-6 transition duration-200 hover:scale-[1.08] hover:border-black/20 hover:bg-white/35 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20">
                 <div className="space-y-2">
                   <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
                     Bachelor of Engineering in Software Engineering
