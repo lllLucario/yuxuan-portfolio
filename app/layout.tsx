@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
+import Container from "@/components/layout/Container";
 import CursorLens from "@/app/components/effects/CursorLens";
+import ThemeToggle from "@/app/components/theme/ThemeToggle";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -54,7 +56,16 @@ export default function RootLayout({
         <CursorLens />
         <div className="lens-overlay" aria-hidden="true" />
         <div className="relative z-10">
-          <Navbar />
+          <div className="fixed top-0 left-0 z-50 w-full pt-3 sm:pt-4">
+            <Container>
+              <div className="relative flex items-center justify-center">
+                <Navbar />
+                <div className="absolute top-1/2 right-0 -translate-y-1/2 sm:right-auto sm:left-full sm:ml-3">
+                  <ThemeToggle />
+                </div>
+              </div>
+            </Container>
+          </div>
           {children}
         </div>
       </body>
