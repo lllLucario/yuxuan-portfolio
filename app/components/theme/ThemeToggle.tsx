@@ -1,7 +1,5 @@
 "use client";
 
-import { useState } from "react";
-
 type Theme = "light" | "dark";
 
 const applyTheme = (theme: Theme) => {
@@ -11,16 +9,10 @@ const applyTheme = (theme: Theme) => {
 };
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>(() =>
-    typeof document !== "undefined" && document.documentElement.classList.contains("dark")
-      ? "dark"
-      : "light"
-  );
-
   const toggleTheme = () => {
-    const nextTheme: Theme = theme === "dark" ? "light" : "dark";
+    const isDark = document.documentElement.classList.contains("dark");
+    const nextTheme: Theme = isDark ? "light" : "dark";
     applyTheme(nextTheme);
-    setTheme(nextTheme);
   };
 
   return (
@@ -32,16 +24,12 @@ export default function ThemeToggle() {
     >
       <span
         aria-hidden="true"
-        className={`pointer-events-none absolute top-1 left-1 h-9 w-9 rounded-full border border-black/10 bg-white/80 shadow-sm transition-transform duration-200 ease-out dark:border-white/10 dark:bg-neutral-900/70 ${
-          theme === "dark" ? "translate-x-9" : "translate-x-0"
-        }`}
+        className="pointer-events-none absolute top-1 left-1 h-9 w-9 translate-x-0 rounded-full border border-black/10 bg-white/80 shadow-sm transition-transform duration-200 ease-out dark:translate-x-9 dark:border-white/10 dark:bg-neutral-900/70"
       />
 
       <span
         aria-hidden="true"
-        className={`relative z-10 flex h-9 w-9 items-center justify-center rounded-full transition-colors duration-150 ${
-          theme === "light" ? "text-amber-500" : "text-neutral-600 dark:text-neutral-300"
-        }`}
+        className="relative z-10 flex h-9 w-9 items-center justify-center rounded-full text-amber-500 transition-colors duration-150 dark:text-neutral-300"
       >
         <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden="true">
           <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" />
@@ -56,9 +44,7 @@ export default function ThemeToggle() {
 
       <span
         aria-hidden="true"
-        className={`relative z-10 flex h-9 w-9 items-center justify-center rounded-full transition-colors duration-150 ${
-          theme === "dark" ? "text-sky-300" : "text-neutral-600 dark:text-neutral-300"
-        }`}
+        className="relative z-10 flex h-9 w-9 items-center justify-center rounded-full text-neutral-600 transition-colors duration-150 dark:text-sky-300"
       >
         <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden="true">
           <path
