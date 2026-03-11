@@ -4,29 +4,45 @@ export type Project = {
   highlights: string[];
   stack: string[];
   href: string;
+  links?: {
+    label: string;
+    href: string;
+  }[];
 };
 
 export const projects: Project[] = [
   {
-    title: "Portfolio CMS Dashboard",
-    description: "A focused internal dashboard for managing portfolio content updates quickly.",
+    title: "MediaJira (Campaign Operations Platform)",
+    description:
+      "Decision Module contribution: a full-stack workflow system for managing draft, approval, review, and linked execution within a larger campaign operations platform.",
     highlights: [
-      "Designed role-based content workflows for faster publishing.",
-      "Built API-driven forms with robust validation and inline feedback.",
-      "Improved content update turnaround through reusable admin modules.",
+      "Designed and implemented a lifecycle-driven Decision module with approval gates, audited transitions, review loops, and linked execution tasks.",
+      "Built full-stack Next.js and Django flows for drafting, approval handling, review UX, and graph-based decision relationships beyond basic CRUD behavior.",
+      "Integrated the module into a larger multi-feature platform while keeping workflow rules and lifecycle constraints enforced on the backend.",
     ],
-    stack: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS"],
-    href: "https://github.com/lllLucario/portfolio-cms-dashboard",
+    stack: ["Next.js", "React", "TypeScript", "Django REST Framework", "PostgreSQL", "Docker", "Redis"],
+    href: "https://github.com/quanwangniuniu/mediaJira",
+    links: [
+      {
+        label: "View on GitHub ↗",
+        href: "https://github.com/quanwangniuniu/mediaJira",
+      },
+      {
+        label: "View PRs ↗",
+        href: "https://github.com/quanwangniuniu/mediaJira/issues?q=is%3Apr%20author%3AlllLucario",
+      },
+    ],
   },
   {
-    title: "Team Task Coordination App",
-    description: "A lightweight collaboration app for tracking priorities and weekly delivery.",
+    title: "Hot Desk Reservation Platform",
+    description:
+      "A full-stack workspace reservation system with real-time desk updates, role-based flows, and containerized local deployment.",
     highlights: [
-      "Implemented task lifecycle states with clear ownership and due dates.",
-      "Added filtered views for sprint planning and daily execution.",
-      "Integrated GitHub-style activity logging for transparent updates.",
+      "Built end-to-end booking workflows with Flask, React, PostgreSQL, and JWT-based authentication for desk and reservation management.",
+      "Implemented real-time desk availability updates using Postgres triggers, LISTEN/NOTIFY, and Socket.IO synchronization.",
+      "Delivered a Dockerized multi-service setup covering frontend, backend, and database environments for local development.",
     ],
-    stack: ["React", "Node.js", "Django", "Docker", "Vercel"],
-    href: "https://github.com/lllLucario/team-task-coordination-app",
+    stack: ["React", "Flask", "PostgreSQL", "JWT", "Socket.IO", "Docker"],
+    href: "https://github.com/lllLucario/portfolio-cms-dashboard",
   },
 ];
