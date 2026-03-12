@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Container from "@/components/layout/Container";
 import Section from "@/components/layout/Section";
@@ -16,6 +16,8 @@ const SKILL_GROUP_ICONS: Record<string, string> = {
 };
 
 export default function Home() {
+  const [showResume, setShowResume] = useState(false);
+
   useEffect(() => {
     const elements = document.querySelectorAll<HTMLElement>(".reveal");
     const observer = new IntersectionObserver(
@@ -38,7 +40,7 @@ export default function Home() {
     <main className="pt-16 sm:pt-20">
       <Section id="hero">
         <Container>
-          <div className="reveal flex min-h-[62vh] items-center sm:min-h-[72vh]">
+          <div className="reveal grid min-h-[62vh] items-center gap-10 sm:min-h-[72vh] lg:grid-cols-[minmax(0,1fr)_420px] lg:gap-14">
             <div className="space-y-5 sm:space-y-6">
               <h1 className="bg-gradient-to-r from-neutral-700 to-neutral-500 bg-clip-text text-3xl font-semibold tracking-tight text-transparent dark:from-neutral-100 dark:to-neutral-400 sm:text-4xl lg:text-5xl">
                 Full-Stack Developer
@@ -49,14 +51,50 @@ export default function Home() {
               <p className="max-w-2xl text-sm text-neutral-600/80 dark:text-neutral-300/80 sm:text-base">
                 I build clean, user-focused web applications.
               </p>
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="inline-flex items-center rounded-md bg-neutral-900 px-5 py-3 text-sm font-medium text-neutral-100 transition duration-150 hover:bg-neutral-700 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200 dark:focus-visible:ring-white/20"
-              >
-                View Resume
-              </a>
+              <div className="flex flex-wrap items-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => setShowResume((current) => !current)}
+                  className="inline-flex items-center rounded-md bg-neutral-900 px-5 py-3 text-sm font-medium text-neutral-100 transition duration-150 hover:bg-neutral-700 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200 dark:focus-visible:ring-white/20"
+                >
+                  {showResume ? "Show Portrait" : "View Resume"}
+                </button>
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="inline-flex items-center rounded-md border border-black/10 bg-white/70 px-5 py-3 text-sm font-medium text-neutral-700 transition duration-150 hover:border-black/20 hover:bg-white dark:border-white/10 dark:bg-neutral-900/50 dark:text-neutral-200 dark:hover:border-white/20 dark:hover:bg-neutral-900/70"
+                >
+                  Open PDF
+                </a>
+              </div>
+            </div>
+
+            <div className="hero-flip-stage mx-auto w-full max-w-[420px]">
+              <div className={`hero-flip-card ${showResume ? "is-flipped" : ""}`}>
+                <div className="hero-flip-face overflow-hidden rounded-[28px] border border-black/10 bg-white/70 shadow-[0_24px_60px_rgba(15,23,42,0.12)] dark:border-white/10 dark:bg-neutral-900/60">
+                  <div className="relative aspect-[4/5]">
+                    <Image
+                      src="/image.png"
+                      alt="Portrait of Yuxuan Liu"
+                      fill
+                      priority
+                      sizes="(max-width: 1024px) 100vw, 420px"
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+
+                <div className="hero-flip-face hero-flip-back rounded-[28px] border border-black/10 bg-white/85 p-3 shadow-[0_24px_60px_rgba(15,23,42,0.12)] dark:border-white/10 dark:bg-neutral-950/80">
+                  <div className="overflow-hidden rounded-[20px] bg-white dark:bg-neutral-900">
+                    <iframe
+                      src="/resume.pdf#toolbar=0&navpanes=0&scrollbar=1"
+                      title="Resume PDF"
+                      className="h-[520px] w-full border-0"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </Container>
@@ -123,32 +161,72 @@ export default function Home() {
               <article className="rounded-xl border border-black/10 bg-white/12 p-6 transition duration-200 hover:scale-[1.08] hover:border-black/20 hover:bg-white/45 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20 dark:hover:bg-neutral-900/30">
                 <div className="space-y-2">
                   <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
-                    Master of Science in Computer Science
+                    Master of Information Technology (Artificial Intelligence)
                   </h3>
                   <p className="text-sm text-neutral-600 dark:text-neutral-300 sm:text-base">
-                    University of Example, Department of Computer Science
+                    University of New South Wales (UNSW Sydney)
                   </p>
-                  <p className="text-xs text-neutral-500 dark:text-neutral-400">2022 - 2024</p>
-                  <p className="text-sm text-neutral-500 dark:text-neutral-400 sm:text-base">
-                    Focused on scalable web systems, distributed architecture, and product
-                    engineering.
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400">
+                    Jan 2023 - Dec 2024 · Sydney, Australia
                   </p>
+                  <ul className="space-y-2 pt-2 text-sm text-neutral-500 dark:text-neutral-400 sm:text-base">
+                    <li className="flex gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-500 dark:bg-neutral-400" />
+                      <span>
+                        Specialized in artificial intelligence, with coursework in machine
+                        learning, data analytics, and intelligent systems.
+                      </span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-500 dark:bg-neutral-400" />
+                      <span>
+                        Built a strong foundation in software engineering, distributed systems,
+                        and modern web technologies through academic and project-based work.
+                      </span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-500 dark:bg-neutral-400" />
+                      <span>
+                        Completed a full-stack capstone project developing a desk reservation
+                        system with Flask, React, and PostgreSQL, focused on scalable backend
+                        design and API-driven architecture.
+                      </span>
+                    </li>
+                  </ul>
                 </div>
               </article>
 
               <article className="rounded-xl border border-black/10 bg-white/12 p-6 transition duration-200 hover:scale-[1.08] hover:border-black/20 hover:bg-white/45 dark:border-white/10 dark:bg-neutral-900/30 dark:hover:border-white/20 dark:hover:bg-neutral-900/30">
                 <div className="space-y-2">
                   <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
-                    Bachelor of Engineering in Software Engineering
+                    Bachelor of Engineering in Computer Science and Technology
                   </h3>
                   <p className="text-sm text-neutral-600 dark:text-neutral-300 sm:text-base">
-                    Example Institute of Technology
+                    Beijing Institute of Technology, Zhuhai
                   </p>
-                  <p className="text-xs text-neutral-500 dark:text-neutral-400">2018 - 2022</p>
-                  <p className="text-sm text-neutral-500 dark:text-neutral-400 sm:text-base">
-                    Built a strong foundation in full-stack development, databases, and team
-                    software delivery.
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400">
+                    Sep 2018 - Jun 2022 · Zhuhai, China
                   </p>
+                  <ul className="space-y-2 pt-2 text-sm text-neutral-500 dark:text-neutral-400 sm:text-base">
+                    <li className="flex gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-500 dark:bg-neutral-400" />
+                      <span>GPA: 3.4 / 4.0</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-500 dark:bg-neutral-400" />
+                      <span>
+                        Developed strong foundations in algorithms, data structures, database
+                        systems, and computer networks.
+                      </span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-500 dark:bg-neutral-400" />
+                      <span>
+                        Completed multiple software development projects involving system design
+                        and programming in Python and Java.
+                      </span>
+                    </li>
+                  </ul>
                 </div>
               </article>
             </div>

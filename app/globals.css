@@ -135,3 +135,35 @@ html:not(.lens-enabled) .lens-overlay {
   opacity: 1;
   transform: translateY(0);
 }
+
+.hero-flip-stage {
+  perspective: 1600px;
+}
+
+.hero-flip-card {
+  position: relative;
+  min-height: 520px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-flip-card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.hero-flip-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.hero-flip-back {
+  transform: rotateY(180deg);
+}
+
+@media (max-width: 1023px) {
+  .hero-flip-card {
+    min-height: 480px;
+  }
+}
