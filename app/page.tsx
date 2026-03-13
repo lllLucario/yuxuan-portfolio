@@ -105,9 +105,9 @@ export default function Home() {
     <main className="pt-16 sm:pt-20">
       <Section id="hero">
         <Container>
-          <div className="reveal grid min-h-[62vh] items-center gap-10 sm:min-h-[72vh] lg:grid-cols-[minmax(0,1fr)_420px] lg:gap-14">
+          <div className="reveal grid min-h-[62vh] items-center gap-12 sm:min-h-[72vh] lg:grid-cols-[minmax(0,1.18fr)_500px] lg:gap-20 xl:gap-24">
             <div className="space-y-5 sm:space-y-6">
-              <h1 className="bg-gradient-to-r from-neutral-700 to-neutral-500 bg-clip-text text-3xl font-semibold tracking-tight text-transparent dark:from-neutral-100 dark:to-neutral-400 sm:text-4xl lg:text-5xl">
+              <h1 className="whitespace-nowrap bg-gradient-to-r from-neutral-700 to-neutral-500 bg-clip-text text-3xl font-semibold tracking-tight text-transparent dark:from-neutral-100 dark:to-neutral-400 sm:text-4xl lg:text-[2.8rem]">
                 Full-Stack Developer
               </h1>
               <p className="text-lg text-neutral-700 dark:text-neutral-200 sm:text-xl">
@@ -125,7 +125,7 @@ export default function Home() {
                   {showResume ? "Show Portrait" : "View Resume"}
                 </button>
                 <a
-                  href="/resume.pdf"
+                  href="/CV_Yuxuan_Liu_FSE.pdf"
                   target="_blank"
                   rel="noreferrer noopener"
                   className="inline-flex items-center rounded-md border border-black/10 bg-white/70 px-5 py-3 text-sm font-medium text-neutral-700 transition duration-150 hover:border-black/20 hover:bg-white dark:border-white/10 dark:bg-neutral-900/50 dark:text-neutral-200 dark:hover:border-white/20 dark:hover:bg-neutral-900/70"
@@ -135,7 +135,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="hero-flip-stage mx-auto w-full max-w-[380px]">
+            <div className="hero-flip-stage mx-auto w-full max-w-[460px] lg:translate-x-6 lg:-translate-y-4">
               <div className={`hero-flip-card ${showResume ? "is-flipped" : ""}`}>
                 <div className="hero-flip-face overflow-hidden rounded-[28px] border border-black/10 bg-white/70 shadow-[0_24px_60px_rgba(15,23,42,0.12)] dark:border-white/10 dark:bg-neutral-900/60">
                   <div className="relative aspect-[4/5]">
@@ -145,7 +145,7 @@ export default function Home() {
                       fill
                       priority
                       quality={100}
-                      sizes="(max-width: 640px) 92vw, (max-width: 1024px) 70vw, 380px"
+                      sizes="(max-width: 640px) 92vw, (max-width: 1024px) 72vw, 460px"
                       className="object-cover object-center"
                     />
                   </div>
@@ -154,7 +154,7 @@ export default function Home() {
                 <div className="hero-flip-face hero-flip-back flex rounded-[28px] border border-black/10 bg-white/85 p-3 shadow-[0_24px_60px_rgba(15,23,42,0.12)] dark:border-white/10 dark:bg-neutral-950/80">
                   <div className="h-full w-full overflow-hidden border border-black/8 bg-white dark:border-white/8 dark:bg-neutral-900">
                     <iframe
-                      src="/resume.pdf#toolbar=0&navpanes=0&scrollbar=1"
+                      src="/CV_Yuxuan_Liu_FSE.pdf#toolbar=0&navpanes=0&scrollbar=1"
                       title="Resume PDF"
                       className="block h-full w-full border-0"
                     />
