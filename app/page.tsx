@@ -135,27 +135,28 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="hero-flip-stage mx-auto w-full max-w-[420px]">
+            <div className="hero-flip-stage mx-auto w-full max-w-[380px]">
               <div className={`hero-flip-card ${showResume ? "is-flipped" : ""}`}>
                 <div className="hero-flip-face overflow-hidden rounded-[28px] border border-black/10 bg-white/70 shadow-[0_24px_60px_rgba(15,23,42,0.12)] dark:border-white/10 dark:bg-neutral-900/60">
                   <div className="relative aspect-[4/5]">
                     <Image
-                      src="/image.png"
+                      src="/image.jpeg"
                       alt="Portrait of Yuxuan Liu"
                       fill
                       priority
-                      sizes="(max-width: 1024px) 100vw, 420px"
-                      className="object-cover"
+                      quality={100}
+                      sizes="(max-width: 640px) 92vw, (max-width: 1024px) 70vw, 380px"
+                      className="object-cover object-center"
                     />
                   </div>
                 </div>
 
-                <div className="hero-flip-face hero-flip-back rounded-[28px] border border-black/10 bg-white/85 p-3 shadow-[0_24px_60px_rgba(15,23,42,0.12)] dark:border-white/10 dark:bg-neutral-950/80">
-                  <div className="overflow-hidden rounded-[20px] bg-white dark:bg-neutral-900">
+                <div className="hero-flip-face hero-flip-back flex rounded-[28px] border border-black/10 bg-white/85 p-3 shadow-[0_24px_60px_rgba(15,23,42,0.12)] dark:border-white/10 dark:bg-neutral-950/80">
+                  <div className="h-full w-full overflow-hidden border border-black/8 bg-white dark:border-white/8 dark:bg-neutral-900">
                     <iframe
                       src="/resume.pdf#toolbar=0&navpanes=0&scrollbar=1"
                       title="Resume PDF"
-                      className="h-[520px] w-full border-0"
+                      className="block h-full w-full border-0"
                     />
                   </div>
                 </div>

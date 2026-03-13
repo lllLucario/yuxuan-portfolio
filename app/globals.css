@@ -142,7 +142,7 @@ html:not(.lens-enabled) .lens-overlay {
 
 .hero-flip-card {
   position: relative;
-  min-height: 520px;
+  min-height: 476px;
   transform-style: preserve-3d;
   transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -164,6 +164,6 @@ html:not(.lens-enabled) .lens-overlay {
 
 @media (max-width: 1023px) {
   .hero-flip-card {
-    min-height: 480px;
+    min-height: 476px;
   }
 }
