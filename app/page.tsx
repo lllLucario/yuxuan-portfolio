@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 import Image from "next/image";
 import Container from "@/components/layout/Container";
 import Section from "@/components/layout/Section";
@@ -17,6 +17,20 @@ const SKILL_GROUP_ICONS: Record<string, string> = {
 
 export default function Home() {
   const [showResume, setShowResume] = useState(false);
+  const [contactForm, setContactForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+    company: "",
+  });
+  const [contactStatus, setContactStatus] = useState<{
+    type: "idle" | "success" | "error";
+    message: string;
+  }>({
+    type: "idle",
+    message: "",
+  });
+  const [isSubmittingContact, setIsSubmittingContact] = useState(false);
 
   useEffect(() => {
     const elements = document.querySelectorAll<HTMLElement>(".reveal");
@@ -35,6 +49,57 @@ export default function Home() {
 
     return () => observer.disconnect();
   }, []);
+
+  const updateContactField = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = event.target;
+    setContactForm((current) => ({
+      ...current,
+      [name]: value,
+    }));
+  };
+
+  const submitContactForm = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (isSubmittingContact) return;
+
+    setIsSubmittingContact(true);
+    setContactStatus({ type: "idle", message: "" });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(contactForm),
+      });
+
+      const payload = (await response.json()) as { message?: string };
+
+      if (!response.ok) {
+        throw new Error(payload.message || "Unable to send your message right now.");
+      }
+
+      setContactForm({
+        name: "",
+        email: "",
+        message: "",
+        company: "",
+      });
+      setContactStatus({
+        type: "success",
+        message: payload.message || "Message sent successfully.",
+      });
+    } catch (error) {
+      setContactStatus({
+        type: "error",
+        message: error instanceof Error ? error.message : "Unable to send your message right now.",
+      });
+    } finally {
+      setIsSubmittingContact(false);
+    }
+  };
 
   return (
     <main className="pt-16 sm:pt-20">
@@ -246,31 +311,62 @@ export default function Home() {
               </p>
             </div>
 
-            <form className="w-full max-w-xl space-y-4">
+            <form className="w-full max-w-xl space-y-4" onSubmit={submitContactForm}>
+              <input
+                type="text"
+                name="company"
+                value={contactForm.company}
+                onChange={updateContactField}
+                tabIndex={-1}
+                autoComplete="off"
+                className="hidden"
+                aria-hidden="true"
+              />
               <input
                 type="text"
                 name="name"
                 placeholder="Name"
+                value={contactForm.name}
+                onChange={updateContactField}
+                required
                 className="w-full rounded-md border border-black/10 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-500 transition duration-150 hover:border-black/20 focus:border-black/30 focus:ring-1 focus:ring-black/20 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/50 dark:text-neutral-100 dark:hover:border-white/20 dark:focus:border-white/30 dark:focus:ring-white/20 dark:focus-visible:ring-white/20 sm:text-base"
               />
               <input
                 type="email"
                 name="email"
                 placeholder="Email"
+                value={contactForm.email}
+                onChange={updateContactField}
+                required
                 className="w-full rounded-md border border-black/10 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-500 transition duration-150 hover:border-black/20 focus:border-black/30 focus:ring-1 focus:ring-black/20 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/50 dark:text-neutral-100 dark:hover:border-white/20 dark:focus:border-white/30 dark:focus:ring-white/20 dark:focus-visible:ring-white/20 sm:text-base"
               />
               <textarea
                 name="message"
                 placeholder="Message"
                 rows={5}
+                value={contactForm.message}
+                onChange={updateContactField}
+                required
                 className="min-h-[120px] w-full resize-none rounded-md border border-black/10 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-500 transition duration-150 hover:border-black/20 focus:border-black/30 focus:ring-1 focus:ring-black/20 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/50 dark:text-neutral-100 dark:hover:border-white/20 dark:focus:border-white/30 dark:focus:ring-white/20 dark:focus-visible:ring-white/20 sm:text-base"
               />
               <button
-                type="button"
+                type="submit"
+                disabled={isSubmittingContact}
                 className="rounded-md bg-neutral-900 px-4 py-2 text-sm font-medium text-neutral-100 transition duration-150 hover:bg-neutral-700 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200 dark:focus-visible:ring-white/20"
               >
-                Send Message
+                {isSubmittingContact ? "Sending..." : "Send Message"}
               </button>
+              {contactStatus.message ? (
+                <p
+                  className={`text-sm ${
+                    contactStatus.type === "success"
+                      ? "text-emerald-700 dark:text-emerald-300"
+                      : "text-red-700 dark:text-red-300"
+                  }`}
+                >
+                  {contactStatus.message}
+                </p>
+              ) : null}
             </form>
 
             <div className="flex items-center gap-5 pt-2">
@@ -307,7 +403,7 @@ export default function Home() {
                 />
               </a>
               <a
-                href="mailto:placeholder@example.com"
+                href="mailto:liu61x0801@gmail.com"
                 aria-label="Email"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-black/10 bg-white text-neutral-700 transition duration-150 hover:border-black/20 hover:bg-neutral-100 hover:text-neutral-900 focus:outline-none focus-visible:ring-1 focus-visible:ring-black/20 dark:border-white/10 dark:bg-neutral-900/40 dark:text-neutral-300 dark:hover:border-white/20 dark:hover:bg-neutral-900/70 dark:hover:text-neutral-100 dark:focus-visible:ring-white/20"
               >
