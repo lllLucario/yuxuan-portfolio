@@ -49,7 +49,6 @@ export default function Home() {
 
     return () => observer.disconnect();
   }, []);
-
   const updateContactField = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
     setContactForm((current) => ({
